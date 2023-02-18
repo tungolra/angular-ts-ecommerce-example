@@ -1,28 +1,53 @@
-# Store
+# E-Commerce Website Example
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+### About 
+This is a test e-commerce website that uses Typescript and Angular. Stripe was integrated to process payments. Users can view and filter through a catalogue of products from Fakestore API, add and update their cart of purchases, and process payments. 
 
-## Development server
+### Responsibilities 
+Frontend
+- Handled client-side scripting using Angular components. 
+- Populated pages using Fakestore API. 
+- Styled pages using Tailwind to create responsive UI/UX. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Backend
+- Integrated Stripe to process payments.
+- Configure server for post requests to Stripe API
 
-## Code scaffolding
+### Pages
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+#### Home 
+<img src="https://i.imgur.com/o0iFlPj.png">
 
-## Build
+#### Cart 
+<img src="https://i.imgur.com/nO3lRwS.png">
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### Checkout 
+<img src="https://i.imgur.com/MXacxPq.png">
+<img src="https://i.imgur.com/GxaoMBd.png">
 
-## Running unit tests
+### Stripe Dashboard
+<img src="https://i.imgur.com/jkSkjQM.png">
+<img src="https://i.imgur.com/7Wq8OMz.png">
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Technologies
+Frontend
+- TypeScript
+- Angular 
+- Tailwind CSS 
+- HTML5
 
-## Running end-to-end tests
+Backend
+- ExpressJS 
+- NodeJS
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+API
+- Stripe
+- [Fakestore API](https://fakestoreapi.com/)
 
-## Further help
+### Credits
+- [Tutorial](https://github.com/bobangajicsm/E-Commerce-Store)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# angular-ts-ecommerce-example
+### Contact
+Ralph Tungol [rarttungol@gmail.com]()
+Project Link: [Ralph Tungol Portfolio](https://ralphtungol.herokuapp.com/)
+Repo: [GitHub](https://github.com/tungolra/portfolio)
