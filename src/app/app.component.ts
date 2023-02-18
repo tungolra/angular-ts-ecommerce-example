@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { Cart } from "./models/cart.model";
+import { CartService } from "./services/cart.service";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
-  <!-- place components here -->
-  <app-header></app-header>
-  <router-outlet></router-outlet>
+    <!-- place components here -->
+    <app-header [cart]="cart"></app-header>
+    <router-outlet></router-outlet>
   `,
-  styles: []
+  styles: [],
 })
-export class AppComponent {
-  title = 'store';
+export class AppComponent implements OnInit {
+  cart: Cart = { items: [] };
+  constructor(private cartService: CartService) {}
+  ngOnInit() {
+    this.cartService.cart.subscribe((_cart) => (this.cart = _cart));
+  }
 }
