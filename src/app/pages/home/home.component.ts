@@ -3,7 +3,9 @@ import { Subscription } from "rxjs";
 import { Product } from "src/app/models/product.model";
 import { CartService } from "src/app/services/cart.service";
 import { StoreService } from "src/app/services/store.service";
+
 const ROWS_HEIGHT: { [id: number]: number } = { 1: 400, 3: 335, 4: 350 };
+
 @Component({
   selector: "app-home",
   templateUrl: "./home.component.html",
@@ -27,7 +29,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getProducts(): void {
-    this.storeService
+    this.productsSubscription = this.storeService
       .getAllProducts(this.count, this.sort)
       .subscribe((_products) => {
         this.products = _products;
@@ -43,6 +45,17 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.category = newCategory;
   }
 
+  onItemsCountChange(newCount: number): void {
+    // update the count and re-fetch the products
+    this.count = newCount.toString();
+    this.getProducts();
+  }
+
+  onSortChange(newSort: string): void {
+    // update the sort and re-fetch the products
+    this.sort = newSort;
+    this.getProducts();
+  }
   onAddToCart(product: Product): void {
     this.cartService.addToCart({
       product: product.image,
@@ -52,6 +65,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       id: product.id,
     });
   }
+
 
   // avoid creating multiple subscriptions to avoid memory leaks
   ngOnDestroy(): void {
