@@ -14,6 +14,7 @@ Backend
 - Configure server for post requests to Stripe API
 
 ### Pages
+[Demo](https://i.imgur.com/lkTHYFT.gif)
 
 #### Home 
 <img src="https://i.imgur.com/o0iFlPj.png">
