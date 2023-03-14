@@ -3,7 +3,10 @@ import { Component, OnInit } from "@angular/core";
 import { loadStripe } from "@stripe/stripe-js";
 import { Cart, CartItem } from "src/app/models/cart.model";
 import { CartService } from "src/app/services/cart.service";
-import { STRIPE_PUBLISHABLE_KEY } from "../../../../tsconfig";
+// import { STRIPE_PUBLISHABLE_KEY } from "../../../../tsconfig";
+import * as dotenv from "dotenv";
+
+dotenv.config(); // load environment variables from .env file
 
 @Component({
   selector: "app-cart",
@@ -53,9 +56,14 @@ export class CartComponent implements OnInit {
   onCheckout(): void {
     // post request to server to make request to stripe
     // returns a session id to open up a stripe checkout modal
-    let key = STRIPE_PUBLISHABLE_KEY;
+    let key =
+      process.env["STRIPE_PUBLISHABLE_KEY"] ||
+      "pk_test_51MccdNK76mSmSLUU0u0DwcQBXrLBRM5xCViCnUjTsXVQixTcPS5bO0CW9UeY3gxju2B1tnqBPaIyJPodSRxKuggt00QOLJc0Gc";
     this.http
-      .post("http://localhost:4242/checkout", {
+      .post(
+        "https://e-commerce-mystore.herokuapp.com/checkout"
+        // "http://localhost:4242/checkout"
+        , {
         items: this.cart.items,
       })
       .subscribe(async (res: any) => {
