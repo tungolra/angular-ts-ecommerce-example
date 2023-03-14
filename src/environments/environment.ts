@@ -2,8 +2,10 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+export const environment: { production: boolean; stripeKey: string } = {
+  production: false,
+  stripeKey:
+    "pk_test_51MccdNK76mSmSLUU0u0DwcQBXrLBRM5xCViCnUjTsXVQixTcPS5bO0CW9UeY3gxju2B1tnqBPaIyJPodSRxKuggt00QOLJc0Gc",
 };
 
 /*
