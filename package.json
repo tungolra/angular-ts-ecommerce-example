@@ -1,6 +1,6 @@
 {
   "name": "store",
-  "version": "18.14.2",
+  "version": "18.10.0",
   "engines": {
     "node": "18.x"
   },
