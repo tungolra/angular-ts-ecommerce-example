@@ -1,11 +1,15 @@
 {
   "name": "store",
   "version": "18.14.2",
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "watch": "ng build --watch --configuration development"
+    "watch": "ng build --watch --configuration development",
+    "heroku-postbuild": "ng build --prod"
   },
   "private": true,
   "dependencies": {
