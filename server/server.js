@@ -83,7 +83,7 @@ app.post("/checkout", async (req, res, next) => {
       })),
       mode: "payment",
       success_url: 
-      "https://e-commerce-mystore.herokuapp.com/"
+      "https://e-commerce-mystore.herokuapp.com/success.html"
       // "http://localhost:4242/success.html"
       ,
       cancel_url: 
