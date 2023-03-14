@@ -1,10 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const path = require('path');
 require("dotenv").config();
 
 const app = express();
-app.use(express.static("public"));
+
+// app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "build")))
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(
@@ -79,8 +82,14 @@ app.post("/checkout", async (req, res, next) => {
         quantity: item.quantity,
       })),
       mode: "payment",
-      success_url: "http://localhost:4242/success.html",
-      cancel_url: "http://localhost:4242/cancel.html",
+      success_url: 
+      "https://e-commerce-mystore.herokuapp.com/"
+      // "http://localhost:4242/success.html"
+      ,
+      cancel_url: 
+      // "http://localhost:4242/cancel.html"
+      "https://e-commerce-mystore.herokuapp.com/cancel.html"
+      ,
     });
 
     res.status(200).json(session);
@@ -89,4 +98,11 @@ app.post("/checkout", async (req, res, next) => {
   }
 });
 
-app.listen(4242, () => console.log("App is running on port 4242"));
+const port = process.env.PORT || 3001;
+
+// app.get("/*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
+
+
+app.listen(port, () => console.log("App is running on port ", port));
