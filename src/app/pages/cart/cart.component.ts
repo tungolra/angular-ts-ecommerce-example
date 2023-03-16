@@ -3,7 +3,6 @@ import { Component, OnInit } from "@angular/core";
 import { loadStripe } from "@stripe/stripe-js";
 import { Cart, CartItem } from "src/app/models/cart.model";
 import { CartService } from "src/app/services/cart.service";
-import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-cart",
